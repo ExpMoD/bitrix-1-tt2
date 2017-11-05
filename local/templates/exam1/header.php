@@ -13,7 +13,10 @@ $workTime = (date('G') >= 9) && (date('G') < 18);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <?$APPLICATION->ShowHead()?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 
+=======
+>>>>>>> Исправление 1
     <?
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/reset.css");
     Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/style.css");
@@ -23,8 +26,12 @@ $workTime = (date('G') >= 9) && (date('G') < 18);
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/owl.carousel.min.js");
     Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/scripts.js");
     ?>
+<<<<<<< HEAD
 
 	<link rel="icon" type="image/vnd.microsoft.icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
+=======
+    <link rel="icon" type="image/vnd.microsoft.icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
+>>>>>>> Исправление 1
     <link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
 </head>
 
