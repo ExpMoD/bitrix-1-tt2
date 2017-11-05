@@ -1,6 +1,7 @@
 <?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();
 IncludeTemplateLangFile(__FILE__);
 
+use Bitrix\Main\Page\Asset;
 
 $workTime = (date('G') >= 9) && (date('G') < 18);
 ?>
@@ -12,13 +13,18 @@ $workTime = (date('G') >= 9) && (date('G') < 18);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <?$APPLICATION->ShowHead()?>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/reset.css" />
-    <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/style.css" />
-    <link rel="stylesheet" href="<?=SITE_TEMPLATE_PATH?>/css/owl.carousel.css" />
-    <script src="<?=SITE_TEMPLATE_PATH?>/js/jquery.min.js"></script>
-    <script src="<?=SITE_TEMPLATE_PATH?>/js/owl.carousel.min.js"></script>
-    <script src="<?=SITE_TEMPLATE_PATH?>/js/scripts.js"></script>
-    <link rel="icon" type="image/vnd.microsoft.icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
+
+    <?
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/reset.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/style.css");
+    Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/css/owl.carousel.css");
+
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/jquery.min.js");
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/owl.carousel.min.js");
+    Asset::getInstance()->addJs(SITE_TEMPLATE_PATH . "/js/scripts.js");
+    ?>
+
+	<link rel="icon" type="image/vnd.microsoft.icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
     <link rel="shortcut icon" href="<?=SITE_TEMPLATE_PATH?>/img/favicon.ico">
 </head>
 
@@ -30,7 +36,7 @@ $workTime = (date('G') >= 9) && (date('G') < 18);
     <!-- header -->
     <header class="header">
         <div class="inner-wrap">
-            <div class="logo-block"><a href="" class="logo">Мебельный магазин</a>
+            <div class="logo-block"><a href="/" class="logo">Мебельный магазин</a>
             </div>
             <div class="main-phone-block">
 	            <?if ($workTime):?>
